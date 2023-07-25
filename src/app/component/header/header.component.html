@@ -1,0 +1,20 @@
+<header>
+  <!-------header line color yellow-------->
+    <div class="navbar navbar-dark bg-warning shadow-sm">
+      <!----------header line color cart row---------->
+        <div class ="navbar-brand align-item-center d-flex">
+          <!-- ----- truck logo--- -->
+            <i style="font-size:25px;color:black;margin-left:412px;margin-top:8px;" class="fas fa-shipping-fast"></i>
+            <!---------ecommerce website name ----------->
+            <strong style="font-size:25px;color:black;margin-left:50px;">Ecommerce website</strong>
+        </div>
+        <!-------------cart button -------------->
+        <button class="btn btn-warning">
+          <!-----------cart logo------------->
+          <i style="font-size:30px;" routerLink="/cart" class="fas fa-cart-plus"></i>
+          <!------------cart quantity green color---------->
+          <div style="font-size:10px;"class="badge bg-success">{{totalItem}}</div> `
+        </button>
+    </div>
+  </header>
+<!---------and then goto appmodule.ts file import http client module---------->

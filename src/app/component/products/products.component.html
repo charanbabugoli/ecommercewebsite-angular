@@ -1,0 +1,23 @@
+
+<div class="container">
+    <div class="row">
+       
+        <ng-container *ngFor="let item of productsList">     <!-- ngfor loop data binding --->
+           
+            <div class="card col-md-3">
+
+                <img src="{{item.image}}"alt="">
+                <!---------item quentity-------->
+                <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100ch;">{{item.quentity}}</p>
+                <!---------item title-------->
+                <h5 style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100ch;">{{item.title}}</h5>
+                <!------item description------>
+                <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100ch;">{{item.description}}</p>
+                <!--------price item -------- -->
+                <p><strong>price:</strong>₹{{item.price}}</p>
+                <!--------addtocart button --------->
+                <button class="btn btn-dark"(click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+    </div>
+</div>

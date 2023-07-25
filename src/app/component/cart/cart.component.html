@@ -1,0 +1,56 @@
+<ng-container *ngIf="products.length !=0">       <!-- Checks if the length of 'products' array is not equal to 0 -->
+
+    <div class="container">
+    <div class="card-table">
+        <div class="card-product">
+            <table class="table table-responisev">    
+                <thead>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Product Name</th>
+                        <th>Products Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of products; let i=index;">     <!-- Loops over each 'item' in the 'products' array -->
+                    <td>{{i+1}}</td>        <!-- Displays the serial number -->
+                    <td>{{item.title}}</td>
+                    <td><img style="width: 120px;" src="{{item.image}}" alt=""> </td>
+                    <td style="width: 25%;">{{item.description}}</td>
+                    <th style="width: 12%;">{{item.price}}</th>
+                    <td style="width: 12%;">{{item.quentity}}</td>
+                    <td style="width: 12;">{{item.total}}</td>
+
+
+                    <td> <button (click)="removeItem(item)"class="btn btn-danger">   <!--(delete button) Triggers the 'removeItem' method when clicked -->
+                         <i class="fas fa-trash"></i>     
+                        </button>
+                     </td>    
+                </tr>
+                <br>
+                <tr>
+                    <td colspan="4"></td>      <!-- Empty cell spanning four columns -->
+                    <td><button (click)="emptycart()"class="btn btn-danger">Empty Cart</button></td>
+                    <td><button routerLink="/products" class="btn btn-primary">Shop more</button></td>
+                    <td><strong>Grand total:{{grandTotal}}</strong></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</ng-container>
+
+<!-----------empty cart----------->
+<ng-container *ngIf="products.length==0">    <!-- Checks if the length of 'products' array is equal to 0 -->
+<div Class="center">
+    <h4>your cart is empty!</h4>
+    <h6>Add item to it now!</h6>
+    <button routerLink="/products"class="btn btn-success">shop now</button>     <!-- Creates a button with a link to the products page -->   
+</div>
+</ng-container> 
